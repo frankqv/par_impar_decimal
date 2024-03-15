@@ -6,16 +6,80 @@
     <link rel="icon" href="https://www.geekmi.news/__export/1617821924665/sites/debate/img/2021/04/07/zenosama1.jpg_423682103.jpg">
 
     <style>
+        body {
+            background-image: url('https://www.fayerwayer.com/resizer/PkatdFwK43rBJu83XtrPN8z3Nn0=/800x0/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/metroworldnews/HSM2NJAATRG5JKQ7BNMKBRERHI.jpg');
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            color: #000000;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        nav,
+        label,
+        input[type="text"],
+        button,
+        #imagenContainer,
+        footer {
+            margin: auto;
+     
+            text-align: center;
+        }
+
+   
+
+        nav, input[type="text"],
+        button {
+            padding: 10px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.994);
+            background-color: rgba(255, 255, 255, 0.5);
+
+   
+        }
+
+        button {
+            background-color: #fff;
+        }
+
+        #imagenContainer {
+            height: 100%;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .imagen-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
         .imagen {
-            width: 400px;
-            height: 400px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 10px;
+            border-radius: 5px;
         }
     </style>
 </head>
 
-<body style="background-image: url('https://www.fayerwayer.com/resizer/PkatdFwK43rBJu83XtrPN8z3Nn0=/800x0/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/metroworldnews/HSM2NJAATRG5JKQ7BNMKBRERHI.jpg');">
-    <nav> </nav><h1 style="background-color: rgb(255, 145, 145); color: #000000; font-weight: bold">Interfaz de Usuario con Imágenes</h1> </nav>
-    <label for="numero" style="background-color: #ffffff; color: #000000; font-weight: bold">Ingrese un número:</label>
+<body>
+    <nav>
+        <h1>Numeros Enteros y decimales</h1>
+    </nav><br>
+    <label for="numero">Ingrese un número:</label>
     <input type="text" id="numero" size="10">
     <button id="mostrarImagen">Mostrar Imagen</button>
     <br><br>
@@ -39,7 +103,13 @@
             imagen.onload = function () {
                 var imagenContainer = document.getElementById('imagenContainer');
                 imagenContainer.innerHTML = '';
-                imagenContainer.appendChild(imagen);
+                var container = document.createElement('div');
+                container.classList.add('imagen-container');
+                var img = document.createElement('img');
+                img.classList.add('imagen');
+                img.src = imagen.src;
+                container.appendChild(img);
+                imagenContainer.appendChild(container);
             };
 
             imagen.onerror = function () {
@@ -47,13 +117,13 @@
             };
         });
     </script>
-    <footer style="background-color: rgb(191, 240, 255); color: #000000; font-weight: bold">
-        /*Solucion GUI en WEB (Interactuar con la audiendcia) <br>
-        * FranciscoQuiñonez2558685 SENA CSF 2023<br>
-        * Par CaritaFeliz<br>
-        * Imapar CaritaTriste<br>
-        * Decimal 10.5 CaritaSorprendida<br>
-       </footer>
+    <footer>
+        Solución GUI en WEB<br>
+        FranciscoQuiñonez2558685 SENA CSF 2023<br>
+        Par CaritaFeliz<br>
+        Impar CaritaTriste<br>
+        Decimal 10.5 CaritaSorprendida<br>
+    </footer>
 </body>
 
 </html>
