@@ -9,3 +9,6 @@
     <td>101.5  ----> 😯 </td>
   </tr>
 </table>
+
+
+En archivo HTML esta 3 en 1, javascript, css y html
